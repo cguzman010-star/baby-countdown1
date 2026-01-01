@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Doomsday Countdown</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: url("background.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.countdown {
+  background: rgba(0,0,0,0.55);
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#timer {
+  font-size: 32px;
+  letter-spacing: 4px;
+  color: white;
+  text-shadow: 0 0 12px rgba(0,255,120,0.8);
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #cfcfcf;
+  margin-top: 8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="countdown">
+  <div id="timer">5 : 14 : 14 : 59 : 43</div>
+  <div class="label">
+    MONTHS&nbsp;&nbsp;DAYS&nbsp;&nbsp;HOURS&nbsp;&nbsp;MINUTES&nbsp;&nbsp;SECONDS
+  </div>
+</div>
+
+<script>
+let seconds = 43;
+
+setInterval(() => {
+  seconds--;
+  if (seconds < 0) seconds = 59;
+
+  document.getElementById("timer").innerHTML =
+    `5 : 14 : 14 : 59 : ${seconds.toString().padStart(2, '0')}`;
+}, 1000);
+</script>
+
+</body>
+</html>
